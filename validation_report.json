@@ -1,0 +1,762 @@
+{
+  "execution": "local Python core suite",
+  "result": {
+    "model": "synthetic-policy-v1",
+    "results": [
+      {
+        "id": "approved-card",
+        "title": "Approved card purchase",
+        "expected": "APPROVED",
+        "observed": "APPROVED",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "30.00",
+          "available": "50.00",
+          "records": {
+            "TX-001": {
+              "status": "APPROVED",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "card",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "approved-bank",
+        "title": "Approved bank purchase",
+        "expected": "APPROVED",
+        "observed": "APPROVED",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "30.00",
+          "available": "50.00",
+          "records": {
+            "TX-001": {
+              "status": "APPROVED",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "bank",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "approved-stablecoin",
+        "title": "Approved stablecoin purchase",
+        "expected": "APPROVED",
+        "observed": "APPROVED",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "30.00",
+          "available": "50.00",
+          "records": {
+            "TX-001": {
+              "status": "APPROVED",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "stablecoin",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "approved-channel",
+        "title": "Approved channel purchase",
+        "expected": "APPROVED",
+        "observed": "APPROVED",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "30.00",
+          "available": "50.00",
+          "records": {
+            "TX-001": {
+              "status": "APPROVED",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "channel",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "wrong-payee",
+        "title": "Payee substitution",
+        "expected": "REJECT_PAYEE",
+        "observed": "REJECT_PAYEE",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0",
+          "available": "80.00",
+          "records": {},
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "REJECT_PAYEE",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "over-limit",
+        "title": "Above single-payment limit",
+        "expected": "REJECT_AMOUNT",
+        "observed": "REJECT_AMOUNT",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0",
+          "available": "80.00",
+          "records": {},
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "REJECT_AMOUNT",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "expired-quote",
+        "title": "Expired quote",
+        "expected": "REJECT_EXPIRED",
+        "observed": "REJECT_EXPIRED",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0",
+          "available": "80.00",
+          "records": {},
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "REJECT_EXPIRED",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "missing-terms",
+        "title": "Missing terms binding",
+        "expected": "REJECT_TERMS",
+        "observed": "REJECT_TERMS",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0",
+          "available": "80.00",
+          "records": {},
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "REJECT_TERMS",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "wrong-principal",
+        "title": "Wrong principal",
+        "expected": "REJECT_PRINCIPAL",
+        "observed": "REJECT_PRINCIPAL",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0",
+          "available": "80.00",
+          "records": {},
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "REJECT_PRINCIPAL",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "wrong-asset",
+        "title": "Wrong asset",
+        "expected": "REJECT_ASSET",
+        "observed": "REJECT_ASSET",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0",
+          "available": "80.00",
+          "records": {},
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "REJECT_ASSET",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "invalid-amount",
+        "title": "Zero-value request",
+        "expected": "REJECT_AMOUNT",
+        "observed": "REJECT_AMOUNT",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0",
+          "available": "80.00",
+          "records": {},
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "REJECT_AMOUNT",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "aggregate-budget",
+        "title": "Aggregate mandate budget",
+        "expected": "REJECT_BUDGET",
+        "observed": "REJECT_BUDGET",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "50",
+          "available": "30.00",
+          "records": {
+            "B1": {
+              "status": "APPROVED",
+              "request": {
+                "txn": "B1",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "card",
+                "amount": "50",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "B1",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            },
+            {
+              "step": 2,
+              "transaction": "B2",
+              "action": "policy",
+              "result": "REJECT_BUDGET",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "idempotency",
+        "title": "Identical repeated request",
+        "expected": "APPROVED (one reservation)",
+        "observed": "APPROVED (30.00 reserved)",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "30.00",
+          "available": "50.00",
+          "records": {
+            "TX-001": {
+              "status": "APPROVED",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "card",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            },
+            {
+              "step": 2,
+              "transaction": "TX-001",
+              "action": "replay",
+              "result": "APPROVED",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "collision",
+        "title": "Modified request with same ID",
+        "expected": "REJECT_ID_COLLISION",
+        "observed": "REJECT_ID_COLLISION",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "30.00",
+          "available": "50.00",
+          "records": {
+            "TX-001": {
+              "status": "APPROVED",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "card",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            },
+            {
+              "step": 2,
+              "transaction": "TX-001",
+              "action": "replay",
+              "result": "REJECT_ID_COLLISION",
+              "detail": ""
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "uncertain-outcome",
+        "title": "Unknown provider outcome holds budget",
+        "expected": "PENDING_RECONCILIATION",
+        "observed": "PENDING_RECONCILIATION",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "30.00",
+          "available": "50.00",
+          "records": {
+            "TX-001": {
+              "status": "PENDING_RECONCILIATION",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "card",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            },
+            {
+              "step": 2,
+              "transaction": "TX-001",
+              "action": "submit",
+              "result": "SUBMITTED",
+              "detail": "Synthetic rail dispatch"
+            },
+            {
+              "step": 3,
+              "transaction": "TX-001",
+              "action": "reconcile",
+              "result": "PENDING_RECONCILIATION",
+              "detail": "Budget retained until outcome known"
+            }
+          ],
+          "simulation_only": true
+        }
+      },
+      {
+        "id": "failed-releases",
+        "title": "Confirmed failure releases budget",
+        "expected": "FAILED (zero reservation)",
+        "observed": "FAILED (0.00 reserved)",
+        "passed": true,
+        "snapshot": {
+          "mandate": {
+            "principal": "research-user",
+            "payee": "approved-api",
+            "asset": "USD",
+            "max_single": "50.00",
+            "total_limit": "80.00",
+            "expires_at": 200,
+            "rails": [
+              "card",
+              "bank",
+              "stablecoin",
+              "channel"
+            ]
+          },
+          "reserved": "0.00",
+          "available": "80.00",
+          "records": {
+            "TX-001": {
+              "status": "FAILED",
+              "request": {
+                "txn": "TX-001",
+                "principal": "research-user",
+                "payee": "approved-api",
+                "asset": "USD",
+                "rail": "card",
+                "amount": "30.00",
+                "quote_expiry": 150,
+                "terms_hash": "demo-terms-sha256-placeholder"
+              }
+            }
+          },
+          "events": [
+            {
+              "step": 1,
+              "transaction": "TX-001",
+              "action": "policy",
+              "result": "APPROVED",
+              "detail": "Funds reserved in simulated budget"
+            },
+            {
+              "step": 2,
+              "transaction": "TX-001",
+              "action": "submit",
+              "result": "SUBMITTED",
+              "detail": "Synthetic rail dispatch"
+            },
+            {
+              "step": 3,
+              "transaction": "TX-001",
+              "action": "settle",
+              "result": "FAILED",
+              "detail": "Simulated outcome; no provider contacted"
+            }
+          ],
+          "simulation_only": true
+        }
+      }
+    ],
+    "passed": 16,
+    "total": 16,
+    "limitations": "Synthetic logical tests only; no cryptographic validation, real providers, or financial settlement."
+  }
+}
